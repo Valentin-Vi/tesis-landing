@@ -7,6 +7,7 @@ import { ContactForm } from './ContactForm';
 import { VideoSection } from './VideoSection';
 import { TestimonialCarousel } from './TestimonialCarousel';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { ImageSection } from './AboutMeSection';
 
 export function HomePage() {
   const [mounted, setMounted] = useState(false);
@@ -18,7 +19,7 @@ export function HomePage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#111111]">
       {mounted && <LanguageSwitcher />}
 
       {/* Hero Section */}
@@ -34,10 +35,10 @@ export function HomePage() {
         />
 
         {/* Dark Overlay */}
-        <div className="absolute bg-linear-to-b from-transparent to-white bottom-0 left-0 right-0 h-[120px]" />
+        <div className="absolute bg-linear-to-b from-transparent to-[#111111] bottom-0 left-0 right-0 h-[120px]" />
 
         {/* Content */}
-        <div className="relative z-10 text-center text-white px-4 max-w-3xl">
+        <div className="relative z-10 text-center text-shadow-lg text-lime-300 px-4 max-w-3xl">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
             {t.heroHeadline}
           </h1>
@@ -46,17 +47,27 @@ export function HomePage() {
           </p>
           <a
             href="#contact"
-            className="inline-block bg-white text-black px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
+            className="inline-block bg-white text-black px-8  py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
           >
             {t.heroCta}
           </a>
         </div>
       </section>
 
+      {/* Who Am I */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <ImageSection
+          imageSrc='/resources/images/pfp2.jpeg'
+          imageAlt="Picture of me"
+          whoAmI={t.introduction.whoAmI}
+          whatIsThis={t.introduction.whatIsThis}
+          imagePosition='left'
+        />
+      </section>
 
       {/* What I've Built */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <h2 className="text-4xl font-bold text-center mb-20 text-gray-900">{t.whatIveBuilt}</h2>
+        <h2 className="text-4xl font-bold text-center mb-20 text-gray-100">{t.whatIveBuilt}</h2>
 
         {/* Project 1 */}
         <VideoSection
@@ -86,24 +97,24 @@ export function HomePage() {
       {/* What I Can Do */}
       <section className="bg-gray-50 py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center mb-16 text-gray-900">{t.whatICanDo}</h2>
+          <h2 className="text-4xl font-bold text-center mb-16 text-gray-100">{t.whatICanDo}</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-lg border border-gray-200">
               <div className="text-4xl mb-4">🤖</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">{t.bringAiTitle}</h3>
+              <h3 className="text-xl font-bold text-gray-100 mb-3">{t.bringAiTitle}</h3>
               <p className="text-gray-600">{t.bringAiDesc}</p>
             </div>
 
             <div className="bg-white p-8 rounded-lg border border-gray-200">
               <div className="text-4xl mb-4">📊</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">{t.messyDataTitle}</h3>
+              <h3 className="text-xl font-bold text-gray-100 mb-3">{t.messyDataTitle}</h3>
               <p className="text-gray-600">{t.messyDataDesc}</p>
             </div>
 
             <div className="bg-white p-8 rounded-lg border border-gray-200">
               <div className="text-4xl mb-4">⚙️</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">{t.fixProcessTitle}</h3>
+              <h3 className="text-xl font-bold text-gray-100 mb-3">{t.fixProcessTitle}</h3>
               <p className="text-gray-600">{t.fixProcessDesc}</p>
             </div>
           </div>
@@ -112,13 +123,13 @@ export function HomePage() {
 
       {/* Why Me */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <h2 className="text-4xl font-bold text-center mb-16 text-gray-900">{t.whyMe}</h2>
+        <h2 className="text-4xl font-bold text-center mb-16 text-gray-100">{t.whyMe}</h2>
 
         <div className="space-y-4">
           <div className="flex items-start gap-4">
             <div className="text-2xl">✓</div>
             <div>
-              <p className="font-semibold text-gray-900">{t.realCompanies}</p>
+              <p className="font-semibold text-gray-100">{t.realCompanies}</p>
               <p className="text-gray-600">{t.realCompaniesDesc}</p>
             </div>
           </div>
@@ -126,7 +137,7 @@ export function HomePage() {
           <div className="flex items-start gap-4">
             <div className="text-2xl">✓</div>
             <div>
-              <p className="font-semibold text-gray-900">{t.recognized}</p>
+              <p className="font-semibold text-gray-100">{t.recognized}</p>
               <p className="text-gray-600">{t.recognizedDesc}</p>
             </div>
           </div>
@@ -134,7 +145,7 @@ export function HomePage() {
           <div className="flex items-start gap-4">
             <div className="text-2xl">✓</div>
             <div>
-              <p className="font-semibold text-gray-900">{t.buildThings}</p>
+              <p className="font-semibold text-gray-100">{t.buildThings}</p>
               <p className="text-gray-600">{t.buildThingsDesc}</p>
             </div>
           </div>
@@ -142,7 +153,7 @@ export function HomePage() {
           <div className="flex items-start gap-4">
             <div className="text-2xl">✓</div>
             <div>
-              <p className="font-semibold text-gray-900">{t.workUntilWorks}</p>
+              <p className="font-semibold text-gray-100">{t.workUntilWorks}</p>
               <p className="text-gray-600">{t.workUntilWorksDesc}</p>
             </div>
           </div>
@@ -157,17 +168,17 @@ export function HomePage() {
               <p className="text-sm font-semibold text-gray-600 mb-3">{t.recognizedBy}</p>
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <div className="px-4 py-2 bg-white border border-gray-300 rounded-lg">
-                  <p className="font-semibold text-gray-900">Platanus Build Night</p>
+                  <p className="font-semibold text-gray-100">Platanus Build Night</p>
                   <p className="text-xs text-gray-600">{t.contender}</p>
                 </div>
                 <div className="text-2xl text-gray-400">+</div>
                 <div className="px-4 py-2 bg-white border border-gray-300 rounded-lg">
-                  <p className="font-semibold text-gray-900">Anthropic</p>
+                  <p className="font-semibold text-gray-100">Anthropic</p>
                   <p className="text-xs text-gray-600">{t.sponsored}</p>
                 </div>
                 <div className="text-2xl text-gray-400">+</div>
                 <div className="px-4 py-2 bg-white border border-gray-300 rounded-lg">
-                  <p className="font-semibold text-gray-900">Tiendanube</p>
+                  <p className="font-semibold text-gray-100">Tiendanube</p>
                   <p className="text-xs text-gray-600">{t.hosted}</p>
                 </div>
               </div>
@@ -179,7 +190,7 @@ export function HomePage() {
       {/* Testimonials */}
       <section className="bg-gray-50 py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center mb-16 text-gray-900">{t.whatOthersSay}</h2>
+          <h2 className="text-4xl font-bold text-center mb-16 text-gray-100">{t.whatOthersSay}</h2>
           <TestimonialCarousel />
         </div>
       </section>
@@ -187,7 +198,7 @@ export function HomePage() {
       {/* Contact Section */}
       <section id="contact" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">{t.letsTalk}</h2>
+          <h2 className="text-4xl font-bold text-gray-100 mb-4">{t.letsTalk}</h2>
           <p className="text-lg text-gray-600">
             {t.letsTalkDesc}
           </p>

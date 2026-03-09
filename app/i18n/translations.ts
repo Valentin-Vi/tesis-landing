@@ -13,6 +13,18 @@ export const translations = {
       'Dejame hacer mi tesis para tu negocio y no te quedes atras.',
     heroCta: "Hablemos",
 
+    // Who Am I
+    introduction: {
+      whoAmI: {
+        title: 'Quien Soy',
+        desc: 'Me llamo Valentín Villa. Soy Lic. Analista en Sistemas y estudiante de Ingenieria en Informatica.',
+      },
+      whatIsThis: {
+        title: 'Que es esto?',
+        desc: "Busco colaborar con gente interesada en traer el futuro a sus empresas atraves de la IA."
+      }
+    },
+    
     // Social Proof
     recognizedBy: 'RECONOCIDO POR',
     contender: 'Contendiente',
@@ -113,6 +125,17 @@ export const translations = {
     heroSubheadline: 'Built AI tools that work. Led teams at major companies. Looking to bring this to your business.',
     heroCta: "Let's Talk",
 
+    // Who Am I
+    introduction: {
+      whoAmI: {
+        title: 'Who Am I',
+        desc: 'My name is Valle'
+      },
+      whatIsThis: {
+        title: 'What is this?',
+        desc: 'Quiero buscar gente que quiera traer el futuro a sus empresas.'
+      }
+    },
     // Social Proof
     recognizedBy: 'RECOGNIZED BY',
     contender: 'Contender',
