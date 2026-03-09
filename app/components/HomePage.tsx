@@ -22,10 +22,10 @@ export function HomePage() {
       {mounted && <LanguageSwitcher />}
 
       {/* Hero Section */}
-      <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative w-full h-[90vh] flex items-center justify-center overflow-hidden bg-black">
         {/* Background Video */}
         <video
-          src="/resources/videos/hero-3.mp4"
+          src="/resources/videos/hackathon-hero.mp4"
           autoPlay
           muted
           loop
@@ -34,7 +34,7 @@ export function HomePage() {
         />
 
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute bg-linear-to-b from-transparent to-white bottom-0 left-0 right-0 h-[120px]" />
 
         {/* Content */}
         <div className="relative z-10 text-center text-white px-4 max-w-3xl">
@@ -53,32 +53,6 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Social Proof */}
-      <section className="py-12 bg-gray-50 border-b border-gray-200">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center justify-center gap-6">
-            <div className="text-center">
-              <p className="text-sm font-semibold text-gray-600 mb-3">{t.recognizedBy}</p>
-              <div className="flex flex-wrap items-center justify-center gap-4">
-                <div className="px-4 py-2 bg-white border border-gray-300 rounded-lg">
-                  <p className="font-semibold text-gray-900">Platanus Build Night</p>
-                  <p className="text-xs text-gray-600">{t.contender}</p>
-                </div>
-                <div className="text-2xl text-gray-400">+</div>
-                <div className="px-4 py-2 bg-white border border-gray-300 rounded-lg">
-                  <p className="font-semibold text-gray-900">Anthropic</p>
-                  <p className="text-xs text-gray-600">{t.sponsored}</p>
-                </div>
-                <div className="text-2xl text-gray-400">+</div>
-                <div className="px-4 py-2 bg-white border border-gray-300 rounded-lg">
-                  <p className="font-semibold text-gray-900">Tiendanube</p>
-                  <p className="text-xs text-gray-600">{t.hosted}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* What I've Built */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -170,6 +144,33 @@ export function HomePage() {
             <div>
               <p className="font-semibold text-gray-900">{t.workUntilWorks}</p>
               <p className="text-gray-600">{t.workUntilWorksDesc}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof */}
+      <section className="py-12 bg-gray-50 border-b border-gray-200">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center justify-center gap-6">
+            <div className="text-center">
+              <p className="text-sm font-semibold text-gray-600 mb-3">{t.recognizedBy}</p>
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                <div className="px-4 py-2 bg-white border border-gray-300 rounded-lg">
+                  <p className="font-semibold text-gray-900">Platanus Build Night</p>
+                  <p className="text-xs text-gray-600">{t.contender}</p>
+                </div>
+                <div className="text-2xl text-gray-400">+</div>
+                <div className="px-4 py-2 bg-white border border-gray-300 rounded-lg">
+                  <p className="font-semibold text-gray-900">Anthropic</p>
+                  <p className="text-xs text-gray-600">{t.sponsored}</p>
+                </div>
+                <div className="text-2xl text-gray-400">+</div>
+                <div className="px-4 py-2 bg-white border border-gray-300 rounded-lg">
+                  <p className="font-semibold text-gray-900">Tiendanube</p>
+                  <p className="text-xs text-gray-600">{t.hosted}</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

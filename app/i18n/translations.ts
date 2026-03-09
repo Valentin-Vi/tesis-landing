@@ -8,9 +8,9 @@ export const translations = {
     spanish: 'Español',
 
     // Hero Section
-    heroHeadline: 'Proveele a tu negocio el exito en la nueva era de IA',
+    heroHeadline: 'La IA ya redifinio como funcionan las empresas',
     heroSubheadline:
-      'Dejame hacer mi tesis para tu negocio y no te quedes atras en el nuevo mundo.',
+      'Dejame hacer mi tesis para tu negocio y no te quedes atras.',
     heroCta: "Hablemos",
 
     // Social Proof
