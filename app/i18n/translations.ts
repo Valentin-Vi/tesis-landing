@@ -32,14 +32,14 @@ export const translations = {
     hosted: 'Anfitrión',
 
     // What I've Built
-    whatIveBuilt: 'Aaca tenes algunos de los proyectos en los que trabaje',
+    whatIveBuilt: 'Queres ver en que trabaje?',
 
     // Project 1
     aiThatSeesTitle: 'Haces Mas Pero Con Menos',
     aiThatSeesDesc: 'Construí un sistema con IA para una planta de agua. Antes, se requerian 2 especialistas y estaban +4 horas por semana, eran 18 horas al mes. Encima sin sumarle la capacitacion y el margen de error. Hoy el analisis es constante y continuo, se hace solo,  y no gastan un peso mas que la electricidad.',
 
     // Project 2
-    slowProcessTitle: 'Lidere un equipo de 24 personas',
+    slowProcessTitle: 'Olvidate de la Micro y Pensa Macro',
     slowProcessDesc: 'Trabaje para Scale, cliente Amazon. Fui lider de un equipo internacional de desarrolladores e ingenieros en un proyecto de IA. Comenzando con 5 entregables y escalando hasta 170 (%340 en productividad). Diseñe e implemente sistemas de adminsitracion para no perder visibilidad del proyecto, herramienta de la que se aprovecho todo el equipo, reduciendo tareas que antes tomaban 4 horas todos los dias a 0 minutos ahorrando 92 horas mensuales.',
 
     // Project 3
