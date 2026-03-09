@@ -8,6 +8,8 @@ import { VideoSection } from './VideoSection';
 import { TestimonialCarousel } from './TestimonialCarousel';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { ImageSectionDoubleContent, ImageSectionSingleContent } from './AboutMeSection';
+import { ReferralScroll } from './ReferralScroll';
+import { mockReferrals } from '../mock/referrals';
 
 export function HomePage() {
   const [mounted, setMounted] = useState(false);
@@ -35,7 +37,7 @@ export function HomePage() {
         />
 
         {/* Dark Overlay */}
-        <div className="absolute bg-linear-to-b from-transparent to-[#111111] bottom-0 left-0 right-0 h-[60px]" />
+        <div className="absolute bg-linear-to-b from-transparent to-[#111111] bottom-0 left-0 right-0 h-[10px]" />
 
         {/* Content */}
         <div className="relative z-10 text-center text-shadow-lg text-[#c7e320] px-4 max-w-3xl">
@@ -55,7 +57,7 @@ export function HomePage() {
       </section>
 
       {/* Who Am I */}
-      <section className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <section className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <ImageSectionDoubleContent
           imageSrc='/resources/images/pfp2.jpeg'
           imageAlt="Picture of me"
@@ -63,14 +65,15 @@ export function HomePage() {
           whatIsThis={t.introduction.whatIsThis}
           imagePosition='left'
         />
-      <div className="absolute w-full bg-linear-to-b from-[#111111] to-[#c7e320] bottom-0 left-0 right-0 h-[60px]" />
       </section>
 
 
       {/* What I've Built */}
-      <section className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 bg-linear-to-b from-[#c7e320] to-[#c7e320]/70">
+      <section className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 bg-linear-to-br from-[#c7e320] to-[#c7e320]/50">
         
-        <h2 className="text-4xl font-bold text-center mb-20 text-[#111111]">{t.whatIveBuilt}</h2>
+        <div className="absolute w-full bg-linear-to-b from-[#111111] to-transparent top-0 left-0 right-0 h-[10px]" />
+        
+        <h2 className="text-4xl font-bold text-center mt-6 text-[#111111]">{t.whatIveBuilt}</h2>
 
         {/* Project 1 */}
         <VideoSection
@@ -95,39 +98,37 @@ export function HomePage() {
           imagePosition='right'
         /> */}
 
-        {/* Project 3 */}
-        <VideoSection
-          videoSrc="/resources/videos/hospital-platform.mp4"
-          title={t.completeSystemTitle}
-          description={t.completeSystemDesc}
-          imagePosition="right"
-        />
-
-        <div className="absolute w-full bg-linear-to-b from-transparent to-[#111111] bottom-0 left-0 right-0 h-[90px]" />
+        <div className="absolute w-full bg-linear-to-b from-transparent to-[#111111] bottom-0 left-0 right-0 h-[15px]" />
       </section>
 
       {/* What I Can Do */}
       <section className="bg-[#111111] py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center mb-16 text-gray-100">{t.whatICanDo}</h2>
+          <h2 className="text-4xl font-bold text-center mb-16 text-[#c7e320]">{t.whatICanDo}</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-lg border border-gray-200">
-              <div className="text-4xl mb-4">🤖</div>
-              <h3 className="text-xl font-bold text-gray-100 mb-3">{t.bringAiTitle}</h3>
-              <p className="text-gray-600">{t.bringAiDesc}</p>
+            <div className="bg-[#c7e320] p-8 rounded-lg">
+              <div className='flex flex-row gap-4 text-left items-center'>
+                <div className="text-4xl mb-4">🤖</div>
+                <h3 className="text-xl font-bold text-[#1e2205] mb-3">{t.bringAiTitle}</h3>
+              </div>
+              <p className="text-[#343b09]">{t.bringAiDesc}</p>
             </div>
 
-            <div className="bg-white p-8 rounded-lg border border-gray-200">
-              <div className="text-4xl mb-4">📊</div>
-              <h3 className="text-xl font-bold text-gray-100 mb-3">{t.messyDataTitle}</h3>
-              <p className="text-gray-600">{t.messyDataDesc}</p>
+            <div className="bg-[#c7e320] p-8 rounded-lg">
+              <div className='flex flex-row gap-4 text-left items-center'>
+                <div className="text-4xl mb-4">📊</div>
+                <h3 className="text-xl font-bold text-[#1e2205] mb-3">{t.messyDataTitle}</h3>
+              </div>
+              <p className="text-[#343b09]">{t.messyDataDesc}</p>
             </div>
-
-            <div className="bg-white p-8 rounded-lg border border-gray-200">
-              <div className="text-4xl mb-4">⚙️</div>
-              <h3 className="text-xl font-bold text-gray-100 mb-3">{t.fixProcessTitle}</h3>
-              <p className="text-gray-600">{t.fixProcessDesc}</p>
+            
+            <div className="bg-[#c7e320] p-8 rounded-lg">
+              <div className='flex flex-row gap-4 text-left items-center'>
+                <div className="text-4xl mb-4">⚙️</div>
+                <h3 className="text-xl font-bold text-[#1e2205] mb-3">{t.fixProcessTitle}</h3>
+              </div>
+              <p className="text-[#343b09]">{t.fixProcessDesc}</p>
             </div>
           </div>
         </div>
@@ -203,7 +204,7 @@ export function HomePage() {
       <section className="bg-gray-50 py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-center mb-16 text-gray-100">{t.whatOthersSay}</h2>
-          <TestimonialCarousel />
+          <ReferralScroll referrals={mockReferrals} autoScrollSpeed={100} />
         </div>
       </section>
 

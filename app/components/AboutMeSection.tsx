@@ -50,7 +50,7 @@ export function ImageSectionDoubleContent({
   )
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 pb-20 gap-8 items-center">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
       <div className="h-80 md:h-96">
         {imageContent}
       </div>

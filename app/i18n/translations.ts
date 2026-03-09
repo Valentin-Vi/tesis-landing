@@ -32,15 +32,15 @@ export const translations = {
     hosted: 'Anfitrión',
 
     // What I've Built
-    whatIveBuilt: 'Queres ver en que trabaje?',
+    whatIveBuilt: '¿Queres ver en que trabaje?',
 
     // Project 1
-    aiThatSeesTitle: 'Haces Mas Pero Con Menos',
+    aiThatSeesTitle: 'Hace Mas Pero Con Menos',
     aiThatSeesDesc: 'Construí un sistema con IA para una planta de agua. Antes, se requerian 2 especialistas y estaban +4 horas por semana, eran 18 horas al mes. Encima sin sumarle la capacitacion y el margen de error. Hoy el analisis es constante y continuo, se hace solo,  y no gastan un peso mas que la electricidad.',
 
     // Project 2
     slowProcessTitle: 'Olvidate de la Micro y Pensa Macro',
-    slowProcessDesc: 'Trabaje para Scale, cliente Amazon. Fui lider de un equipo internacional de desarrolladores e ingenieros en un proyecto de IA. Comenzando con 5 entregables y escalando hasta 170 (%340 en productividad). Diseñe e implemente sistemas de adminsitracion para no perder visibilidad del proyecto, herramienta de la que se aprovecho todo el equipo, reduciendo tareas que antes tomaban 4 horas todos los dias a 0 minutos ahorrando 92 horas mensuales.',
+    slowProcessDesc: 'Trabaje para Scale, cliente Amazon. Fui lider de un equipo internacional de 24 desarrolladores e ingenieros en un proyecto de IA. Comenzando con 5 entregables y escalando hasta 170 (%340 en productividad). Diseñe e implemente sistemas de adminsitracion para no perder visibilidad del proyecto, herramienta de la que se aprovecho todo el equipo, reduciendo tareas que antes tomaban 4 horas todos los dias a 0 minutos ahorrando 92 horas mensuales.',
 
     // Project 3
     completeSystemTitle: 'Construí un Sistema Completo',
@@ -48,15 +48,16 @@ export const translations = {
       'Sistema de gestión hospitalaria: el personal puede gestionar pacientes e inventario en un mismo lugar, ver datos en tiempo real, todo asegurado y respaldado. Muestra que puedo ser dueño de un proyecto de punta a punta.',
 
     // What I Can Do
-    whatICanDo: 'Qué Puedo Hacer Por Ti',
-    bringAiTitle: 'Traer AI a Tu Flujo de Trabajo',
-    bringAiDesc: 'Haz en minutos lo que toma horas. Automatiza lo tedioso. Integra AI moderno donde realmente importa.',
+    whatICanDo: 'Qué Puedo Hacer Por Vos',
 
-    messyDataTitle: 'Convertir Datos Desordenados en Útiles',
-    messyDataDesc: 'Límpialos. Analízalos. Muéstrate qué importa. Transforma datos en decisiones.',
+    bringAiTitle: 'Que Trabajes Menos',
+    bringAiDesc: 'Hace en minutos lo que toma horas. Automatiza lo tedioso para no gastar tiempo y garantiza mejores resultados. Integra AI moderno donde realmente importa.',
 
-    fixProcessTitle: 'Arreglar Procesos Lentos y Rotos',
-    fixProcessDesc: 'Encuentra el cuello de botella. Arréglalo. Hazlo escalable. Transforma caos en orden.',
+    messyDataTitle: 'Que Trabajes Mejor',
+    messyDataDesc: 'Aumenta tu visibilidad de ineficiencias y el grado de impacto de tareas & procesos para eficientizar y tomar mejores decisiones que quizas mañana le dejes a una IA.',
+
+    fixProcessTitle: 'Innovar',
+    fixProcessDesc: '¿Tenes una idea para un producto nuevo? Es justamente lo que mas me interesa. Charlemos y vemos como te puedo ayudar.',
 
     // Why Me
     whyMe: 'Por Qué Yo',
