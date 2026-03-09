@@ -7,7 +7,7 @@ import { ContactForm } from './ContactForm';
 import { VideoSection } from './VideoSection';
 import { TestimonialCarousel } from './TestimonialCarousel';
 import { LanguageSwitcher } from './LanguageSwitcher';
-import { ImageSection } from './AboutMeSection';
+import { ImageSectionDoubleContent, ImageSectionSingleContent } from './AboutMeSection';
 
 export function HomePage() {
   const [mounted, setMounted] = useState(false);
@@ -35,10 +35,10 @@ export function HomePage() {
         />
 
         {/* Dark Overlay */}
-        <div className="absolute bg-linear-to-b from-transparent to-[#111111] bottom-0 left-0 right-0 h-[120px]" />
+        <div className="absolute bg-linear-to-b from-transparent to-[#111111] bottom-0 left-0 right-0 h-[60px]" />
 
         {/* Content */}
-        <div className="relative z-10 text-center text-shadow-lg text-lime-300 px-4 max-w-3xl">
+        <div className="relative z-10 text-center text-shadow-lg text-[#c7e320] px-4 max-w-3xl">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
             {t.heroHeadline}
           </h1>
@@ -55,47 +55,59 @@ export function HomePage() {
       </section>
 
       {/* Who Am I */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <ImageSection
+      <section className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <ImageSectionDoubleContent
           imageSrc='/resources/images/pfp2.jpeg'
           imageAlt="Picture of me"
           whoAmI={t.introduction.whoAmI}
           whatIsThis={t.introduction.whatIsThis}
           imagePosition='left'
         />
+      <div className="absolute w-full bg-linear-to-b from-[#111111] to-[#c7e320] bottom-0 left-0 right-0 h-[60px]" />
       </section>
 
+
       {/* What I've Built */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <h2 className="text-4xl font-bold text-center mb-20 text-gray-100">{t.whatIveBuilt}</h2>
+      <section className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 bg-linear-to-b from-[#c7e320] to-[#c7e320]/70">
+        
+        <h2 className="text-4xl font-bold text-center mb-20 text-[#111111]">{t.whatIveBuilt}</h2>
 
         {/* Project 1 */}
         <VideoSection
           videoSrc="/resources/videos/scale-ai-process.mp4"
           title={t.aiThatSeesTitle}
           description={t.aiThatSeesDesc}
-          imagePosition="left"
+          imagePosition="right"
         />
 
         {/* Project 2 */}
         <VideoSection
-          videoSrc="/resources/videos/scale-ai-process.mp4"
+          videoSrc="/resources/videos/scale-team.webm"
           title={t.slowProcessTitle}
           description={t.slowProcessDesc}
-          imagePosition="right"
+          imagePosition="left"
         />
+        {/* <ImageSectionSingleContent
+          imageSrc='/resources/images/hackathon.jpg'
+          imageAlt="Picture of event"
+          title={t.slowProcessTitle}
+          desc={t.slowProcessDesc}
+          imagePosition='right'
+        /> */}
 
         {/* Project 3 */}
         <VideoSection
           videoSrc="/resources/videos/hospital-platform.mp4"
           title={t.completeSystemTitle}
           description={t.completeSystemDesc}
-          imagePosition="left"
+          imagePosition="right"
         />
+
+        <div className="absolute w-full bg-linear-to-b from-transparent to-[#111111] bottom-0 left-0 right-0 h-[90px]" />
       </section>
 
       {/* What I Can Do */}
-      <section className="bg-gray-50 py-20">
+      <section className="bg-[#111111] py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-center mb-16 text-gray-100">{t.whatICanDo}</h2>
 

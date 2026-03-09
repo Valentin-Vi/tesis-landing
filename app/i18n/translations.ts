@@ -20,8 +20,8 @@ export const translations = {
         desc: 'Me llamo Valentín Villa. Soy Lic. Analista en Sistemas y estudiante de Ingenieria en Informatica.',
       },
       whatIsThis: {
-        title: 'Que es esto?',
-        desc: "Busco colaborar con gente interesada en traer el futuro a sus empresas atraves de la IA."
+        title: '¿Que es esto?',
+        desc: "Busco hacer mi tesis para vos gratis (si, gratis). Si estas interesado en traer el futuro a tu empresa, prestame 15 minutos y contame que necesitas."
       }
     },
     
@@ -32,17 +32,15 @@ export const translations = {
     hosted: 'Anfitrión',
 
     // What I've Built
-    whatIveBuilt: 'Lo Que Construí',
+    whatIveBuilt: 'Aaca tenes algunos de los proyectos en los que trabaje',
 
     // Project 1
-    aiThatSeesTitle: 'AI Que Ve y Analiza',
-    aiThatSeesDesc:
-      'Construí un sistema que detecta y analiza automáticamente miles de puntos de datos — sin trabajo manual. Funciona 24/7, da insights al instante. Esto significa automatizar análisis tediosos, decisiones más rápidas, y más tiempo para lo que importa.',
+    aiThatSeesTitle: 'Haces Mas Pero Con Menos',
+    aiThatSeesDesc: 'Construí un sistema con IA para una planta de agua. Antes, se requerian 2 especialistas y estaban +4 horas por semana, eran 18 horas al mes. Encima sin sumarle la capacitacion y el margen de error. Hoy el analisis es constante y continuo, se hace solo,  y no gastan un peso mas que la electricidad.',
 
     // Project 2
-    slowProcessTitle: 'Hice un Proceso Lento, Rápido',
-    slowProcessDesc:
-      'Tomé un equipo en una gran empresa de AI que se ahogaba en cuellos de botella. Analicé qué era lento, lo arreglé, lo escalé. El equipo hizo 3x más trabajo. De procesos fragmentados a un sistema limpio y rápido.',
+    slowProcessTitle: 'Lidere un equipo de 24 personas',
+    slowProcessDesc: 'Trabaje para Scale, cliente Amazon. Fui lider de un equipo internacional de desarrolladores e ingenieros en un proyecto de IA. Comenzando con 5 entregables y escalando hasta 170 (%340 en productividad). Diseñe e implemente sistemas de adminsitracion para no perder visibilidad del proyecto, herramienta de la que se aprovecho todo el equipo, reduciendo tareas que antes tomaban 4 horas todos los dias a 0 minutos ahorrando 92 horas mensuales.',
 
     // Project 3
     completeSystemTitle: 'Construí un Sistema Completo',

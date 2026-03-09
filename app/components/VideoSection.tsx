@@ -26,8 +26,8 @@ export function VideoSection({
 
   const textContent = (
     <div className="flex flex-col justify-center">
-      <h3 className="text-3xl font-bold text-gray-100 mb-4">{title}</h3>
-      <p className="text-lg text-gray-400 leading-relaxed">{description}</p>
+      <h3 className="text-3xl font-bold text-gray-900 mb-4">{title}</h3>
+      <p className="text-lg text-gray-700 leading-relaxed">{description}</p>
     </div>
   );
 
