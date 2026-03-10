@@ -18,7 +18,7 @@ export const translations = {
       title: "Busco hacer mi tesis para tu negocio y sin cobrar",
       whoAmI: {
         title: '¿Quién soy?',
-        desc: 'Me llamo Valentín Villa. Soy Lic. Analista en Sistemas y estudiante de Ingeniería en Informática.',
+        desc: 'Me llamo Valentín Villa (El de la derecha). Soy Lic. Analista en Sistemas y estudiante de Ingeniería en Informática.',
       },
       whatIsThis: {
         title: '¿Por qué hago esto?',

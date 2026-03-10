@@ -42,7 +42,7 @@ export function HomePage() {
           </p>
           <a
             href="#contact"
-            className="inline-block bg-white text-black px-8 text-shadow-none py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
+            className="inline-block bg-white text-black px-8 text-shadow-none py-3 rounded-lg font-semibold hover:bg-gray-200 transition"
           >
             {t.heroCta}
           </a>
