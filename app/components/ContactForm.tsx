@@ -17,9 +17,16 @@ export function ContactForm() {
     setLoading(true);
 
     try {
-      // For now, just log and show success
-      // Later you can connect to an API endpoint
-      console.log({ email, description });
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, description }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
       setSubmitted(true);
       setEmail('');
       setDescription('');
