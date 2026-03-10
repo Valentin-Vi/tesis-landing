@@ -1,4 +1,5 @@
 import dynamicImport from 'next/dynamic';
+import { LanguageProvider } from './components/LanguageProvider';
 
 export const dynamic = 'force-dynamic';
 
@@ -7,5 +8,5 @@ const HomePage = dynamicImport(() => import('./components/HomePage').then(mod =>
 });
 
 export default function Page() {
-  return <HomePage />;
+  return <HomePage />
 }

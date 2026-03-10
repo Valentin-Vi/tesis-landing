@@ -18,18 +18,19 @@ export function HomePage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#111111]">
+    <div className="min-h-screen w-full overflow-x-hidden bg-[#111111]">
       {mounted && <LanguageSwitcher />}
 
-      <section className="relative w-full lg:h-[90vh] sm:h-[38vh] flex items-center justify-center overflow-hidden bg-black">
+      <section className="relative w-full h-[70vh] lg:h-[60vh] pt-20 lg:py-12 flex items-center justify-center overflow-hidden bg-black">
         <video
-          src="/resources/videos/hackathon-hero.mp4"
+          playsInline
           autoPlay
           muted
           loop
-          playsInline
           className="absolute inset-0 w-full h-full object-cover"
-        />
+        >
+          <source src="/resources/videos/hackathon-hero.mp4" type="video/mp4" />
+        </video>
 
         <div className="absolute bg-linear-to-b from-transparent to-[#111111] bottom-0 left-0 right-0 h-[10px]" />
 
@@ -37,7 +38,7 @@ export function HomePage() {
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
             {t.heroHeadline}
           </h1>
-          <p className="text-xl md:text-2xl mb-8 opacity-90">
+          <p className="text-xl md:text-2xl mb-8 text-gray-100">
             {t.heroSubheadline}
           </p>
           <a
@@ -121,7 +122,7 @@ export function HomePage() {
       {/* Contact Section */}
       <section id="contact" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-12">
-          <h2 className="text-8xl font-bold text-[#c7e320] mb-4">{t.letsTalk}</h2>
+          <h2 className="text-6xl lg:text-8xl font-bold text-[#c7e320] mb-4">{t.letsTalk}</h2>
           <p className="text-lg text-gray-100">
             {t.letsTalkDesc}
           </p>
