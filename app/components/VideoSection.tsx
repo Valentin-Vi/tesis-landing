@@ -1,3 +1,5 @@
+import TextComponent from "./TextComponent";
+
 interface VideoSectionProps {
   videoSrc: string;
   title: string;
@@ -24,23 +26,16 @@ export function VideoSection({
     </div>
   );
 
-  const textContent = (
-    <div className="flex flex-col justify-center">
-      <h3 className="text-3xl font-bold text-gray-900 mb-4">{title}</h3>
-      <p className="text-lg text-gray-700 leading-relaxed">{description}</p>
-    </div>
-  );
-
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-16">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-8">
       {imagePosition === 'left' ? (
         <>
           <div className="h-80 md:h-96">{videoContent}</div>
-          <div>{textContent}</div>
+          <TextComponent title={title} desc={description} />
         </>
       ) : (
         <>
-          <div>{textContent}</div>
+          <TextComponent title={title} desc={description} />
           <div className="h-80 md:h-96">{videoContent}</div>
         </>
       )}

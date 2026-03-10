@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Image from "next/image"
 
 export interface Referral {
   id: string;
@@ -39,7 +40,7 @@ export function ReferralScroll({ referrals, autoScrollSpeed = 50 }: ReferralScro
   const duplicatedReferrals = [...referrals, ...referrals];
 
   return (
-    <div className="w-full overflow-hidden bg-white py-8">
+    <div className="w-full overflow-hidden bg-[#111111] py-4">
       <div
         ref={scrollContainerRef}
         className="flex gap-6 overflow-x-hidden scroll-smooth px-4"
@@ -47,32 +48,32 @@ export function ReferralScroll({ referrals, autoScrollSpeed = 50 }: ReferralScro
         {duplicatedReferrals.map((referral, index) => (
           <div
             key={`${referral.id}-${index}`}
-            className="flex-shrink-0 w-80 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow"
+            className="flex-shrink-0 w-80 rounded-lg border border-[#c7e320] px-6 py-4 hover:shadow-lg transition-shadow"
           >
             <div className="flex gap-3 mb-4">
               {referral.image ? (
-                <img
-                  src={referral.image}
-                  alt={referral.name}
-                  className="w-12 h-12 rounded-full object-cover"
-                />
+                <div className="w-12 h-12 rounded-full overflow-hidden bg-[#c7e320] flex items-center justify-center text-gray-600 font-bold">
+                  <Image
+                    src="/resources/images/scale_logo.jpg"
+                    alt="Company: Scale AI"
+                    title="Scale AI"
+                    width={50}
+                    height={50}
+                  />
+                </div>
               ) : (
-                <div className="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center text-gray-600 font-bold">
+                <div className="w-12 h-12 rounded-full text-[#c7e320] flex items-center justify-center font-bold">
                   {referral.name.charAt(0)}
                 </div>
               )}
               <div className="flex-1">
-                <p className="font-semibold text-gray-900">{referral.name}</p>
-                <p className="text-sm text-gray-600">{referral.role}</p>
-                <p className="text-xs text-gray-500">{referral.company}</p>
+                <p className="font-semibold text-[#c7e320]">{referral.name}</p>
+                <p className="text-sm text-[#c7e320]">{referral.role}</p>
+                <p className="text-xs text-[#c7e320]">{referral.company}</p>
               </div>
             </div>
 
-            <div className="mb-3">
-              <span className="text-yellow-400 text-lg">★★★★★</span>
-            </div>
-
-            <p className="text-gray-700 text-sm italic leading-relaxed">
+            <p className="text-[#c7e320] text-sm italic leading-relaxed">
               "{referral.quote}"
             </p>
           </div>

@@ -36,7 +36,7 @@ export function ContactForm() {
     <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto">
       <div className="space-y-4">
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-2">
+          <label htmlFor="email" className="block text-sm font-medium text-gray-100 mb-2">
             {t.contactEmail}
           </label>
           <input
@@ -51,7 +51,7 @@ export function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="description" className="block text-sm font-medium text-gray-900 mb-2">
+          <label htmlFor="description" className="block text-sm font-medium text-gray-100 mb-2">
             {t.contactDescription}
           </label>
           <textarea
@@ -67,7 +67,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-900 transition disabled:opacity-50"
+          className="w-full bg-gray-100 text-black py-3 rounded-lg font-semibold hover:bg-[#c7e320] transition disabled:opacity-50"
         >
           {loading ? t.contactSubmitting : t.contactSubmit}
         </button>

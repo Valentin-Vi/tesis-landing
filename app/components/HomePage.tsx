@@ -5,11 +5,8 @@ import { useLanguage } from './LanguageProvider';
 import { getTranslation } from '../i18n/translations';
 import { ContactForm } from './ContactForm';
 import { VideoSection } from './VideoSection';
-import { TestimonialCarousel } from './TestimonialCarousel';
 import { LanguageSwitcher } from './LanguageSwitcher';
-import { ImageSectionDoubleContent, ImageSectionSingleContent } from './AboutMeSection';
-import { ReferralScroll } from './ReferralScroll';
-import { mockReferrals } from '../mock/referrals';
+import { ImageSectionDoubleContent } from './AboutMeSection';
 
 export function HomePage() {
   const [mounted, setMounted] = useState(false);
@@ -24,9 +21,7 @@ export function HomePage() {
     <div className="min-h-screen bg-[#111111]">
       {mounted && <LanguageSwitcher />}
 
-      {/* Hero Section */}
       <section className="relative w-full h-[90vh] flex items-center justify-center overflow-hidden bg-black">
-        {/* Background Video */}
         <video
           src="/resources/videos/hackathon-hero.mp4"
           autoPlay
@@ -36,11 +31,9 @@ export function HomePage() {
           className="absolute inset-0 w-full h-full object-cover"
         />
 
-        {/* Dark Overlay */}
         <div className="absolute bg-linear-to-b from-transparent to-[#111111] bottom-0 left-0 right-0 h-[10px]" />
 
-        {/* Content */}
-        <div className="relative z-10 text-center text-shadow-lg text-[#c7e320] px-4 max-w-3xl">
+        <div className="relative z-10 text-center text-shadow-lg text-shadow-black/35 text-[#c7e320] px-4 max-w-3xl">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
             {t.heroHeadline}
           </h1>
@@ -49,7 +42,7 @@ export function HomePage() {
           </p>
           <a
             href="#contact"
-            className="inline-block bg-white text-black px-8  py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
+            className="inline-block bg-white text-black px-8 text-shadow-none py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
           >
             {t.heroCta}
           </a>
@@ -57,7 +50,8 @@ export function HomePage() {
       </section>
 
       {/* Who Am I */}
-      <section className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-5xl font-bold text-center mt-6 text-[#c7e320] py-8">{t.introduction.title}</h2>
         <ImageSectionDoubleContent
           imageSrc='/resources/images/pfp2.jpeg'
           imageAlt="Picture of me"
@@ -69,12 +63,9 @@ export function HomePage() {
 
 
       {/* What I've Built */}
-      <section className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 bg-linear-to-br from-[#c7e320] to-[#c7e320]/50">
+      <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">        
+        <h2 className="text-5xl font-bold text-center text-[#c7e320]">{t.whatIveBuilt.title}</h2>
         
-        <div className="absolute w-full bg-linear-to-b from-[#111111] to-transparent top-0 left-0 right-0 h-[10px]" />
-        
-        <h2 className="text-4xl font-bold text-center mt-6 text-[#111111]">{t.whatIveBuilt}</h2>
-
         {/* Project 1 */}
         <VideoSection
           videoSrc="/resources/videos/scale-ai-process.mp4"
@@ -90,13 +81,6 @@ export function HomePage() {
           description={t.slowProcessDesc}
           imagePosition="left"
         />
-        {/* <ImageSectionSingleContent
-          imageSrc='/resources/images/hackathon.jpg'
-          imageAlt="Picture of event"
-          title={t.slowProcessTitle}
-          desc={t.slowProcessDesc}
-          imagePosition='right'
-        /> */}
 
         <div className="absolute w-full bg-linear-to-b from-transparent to-[#111111] bottom-0 left-0 right-0 h-[15px]" />
       </section>
@@ -107,112 +91,38 @@ export function HomePage() {
           <h2 className="text-4xl font-bold text-center mb-16 text-[#c7e320]">{t.whatICanDo}</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-[#c7e320] p-8 rounded-lg">
+            <div className="p-8 rounded-lg">
               <div className='flex flex-row gap-4 text-left items-center'>
                 <div className="text-4xl mb-4">🤖</div>
-                <h3 className="text-xl font-bold text-[#1e2205] mb-3">{t.bringAiTitle}</h3>
+                <h3 className="text-xl font-bold text-[#c7e320] mb-3">{t.bringAiTitle}</h3>
               </div>
-              <p className="text-[#343b09]">{t.bringAiDesc}</p>
+              <p className="text-gray-100">{t.bringAiDesc}</p>
             </div>
 
-            <div className="bg-[#c7e320] p-8 rounded-lg">
+            <div className="p-8 rounded-lg">
               <div className='flex flex-row gap-4 text-left items-center'>
                 <div className="text-4xl mb-4">📊</div>
-                <h3 className="text-xl font-bold text-[#1e2205] mb-3">{t.messyDataTitle}</h3>
+                <h3 className="text-xl font-bold text-[#c7e320] mb-3">{t.messyDataTitle}</h3>
               </div>
-              <p className="text-[#343b09]">{t.messyDataDesc}</p>
+              <p className="text-gray-100">{t.messyDataDesc}</p>
             </div>
             
-            <div className="bg-[#c7e320] p-8 rounded-lg">
+            <div className="p-8 rounded-lg">
               <div className='flex flex-row gap-4 text-left items-center'>
                 <div className="text-4xl mb-4">⚙️</div>
-                <h3 className="text-xl font-bold text-[#1e2205] mb-3">{t.fixProcessTitle}</h3>
+                <h3 className="text-xl font-bold text-[#c7e320] mb-3">{t.fixProcessTitle}</h3>
               </div>
-              <p className="text-[#343b09]">{t.fixProcessDesc}</p>
+              <p className="text-gray-100">{t.fixProcessDesc}</p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Why Me */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <h2 className="text-4xl font-bold text-center mb-16 text-gray-100">{t.whyMe}</h2>
-
-        <div className="space-y-4">
-          <div className="flex items-start gap-4">
-            <div className="text-2xl">✓</div>
-            <div>
-              <p className="font-semibold text-gray-100">{t.realCompanies}</p>
-              <p className="text-gray-600">{t.realCompaniesDesc}</p>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-4">
-            <div className="text-2xl">✓</div>
-            <div>
-              <p className="font-semibold text-gray-100">{t.recognized}</p>
-              <p className="text-gray-600">{t.recognizedDesc}</p>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-4">
-            <div className="text-2xl">✓</div>
-            <div>
-              <p className="font-semibold text-gray-100">{t.buildThings}</p>
-              <p className="text-gray-600">{t.buildThingsDesc}</p>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-4">
-            <div className="text-2xl">✓</div>
-            <div>
-              <p className="font-semibold text-gray-100">{t.workUntilWorks}</p>
-              <p className="text-gray-600">{t.workUntilWorksDesc}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Social Proof */}
-      <section className="py-12 bg-gray-50 border-b border-gray-200">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center justify-center gap-6">
-            <div className="text-center">
-              <p className="text-sm font-semibold text-gray-600 mb-3">{t.recognizedBy}</p>
-              <div className="flex flex-wrap items-center justify-center gap-4">
-                <div className="px-4 py-2 bg-white border border-gray-300 rounded-lg">
-                  <p className="font-semibold text-gray-100">Platanus Build Night</p>
-                  <p className="text-xs text-gray-600">{t.contender}</p>
-                </div>
-                <div className="text-2xl text-gray-400">+</div>
-                <div className="px-4 py-2 bg-white border border-gray-300 rounded-lg">
-                  <p className="font-semibold text-gray-100">Anthropic</p>
-                  <p className="text-xs text-gray-600">{t.sponsored}</p>
-                </div>
-                <div className="text-2xl text-gray-400">+</div>
-                <div className="px-4 py-2 bg-white border border-gray-300 rounded-lg">
-                  <p className="font-semibold text-gray-100">Tiendanube</p>
-                  <p className="text-xs text-gray-600">{t.hosted}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="bg-gray-50 py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center mb-16 text-gray-100">{t.whatOthersSay}</h2>
-          <ReferralScroll referrals={mockReferrals} autoScrollSpeed={100} />
         </div>
       </section>
 
       {/* Contact Section */}
       <section id="contact" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-100 mb-4">{t.letsTalk}</h2>
-          <p className="text-lg text-gray-600">
+          <h2 className="text-8xl font-bold text-[#c7e320] mb-4">{t.letsTalk}</h2>
+          <p className="text-lg text-gray-100">
             {t.letsTalkDesc}
           </p>
         </div>
