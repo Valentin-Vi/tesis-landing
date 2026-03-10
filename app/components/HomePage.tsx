@@ -21,7 +21,7 @@ export function HomePage() {
     <div className="min-h-screen bg-[#111111]">
       {mounted && <LanguageSwitcher />}
 
-      <section className="relative w-full h-[90vh] flex items-center justify-center overflow-hidden bg-black">
+      <section className="relative w-full lg:h-[90vh] sm:h-[38vh] flex items-center justify-center overflow-hidden bg-black">
         <video
           src="/resources/videos/hackathon-hero.mp4"
           autoPlay
