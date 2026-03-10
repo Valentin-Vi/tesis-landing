@@ -22,7 +22,7 @@ export const translations = {
       },
       whatIsThis: {
         title: '¿Por qué hago esto?',
-        desc: "Estoy comprometido a romperla con la tesis, y para eso necesito un caso real. Si te interesa traer el futuro a tu empresa, prestame 15 minutos y contame qué necesitás."
+        desc: "Estoy comprometido a hacer la mejor tesis que esta facultad haya visto, y para eso necesito un caso real. Si te interesa traer el futuro a tu empresa, prestame 15 minutos y contame qué necesitás."
       }
     },
     
