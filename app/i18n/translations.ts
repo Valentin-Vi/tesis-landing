@@ -63,7 +63,7 @@ export const translations = {
     // What I Can Do
     whatICanDo: 'Lo que puedo hacer para vos',
 
-    bringAiTitle: 'Que trabajes más',
+    bringAiTitle: 'Que tu trabajo rinda más',
     bringAiDesc:
       'Hacé en minutos lo que hoy toma horas. Automatizá lo tedioso, ahorrá tiempo y garantizá mejores resultados. Integro IA moderna donde realmente importa.',
 
