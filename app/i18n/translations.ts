@@ -160,7 +160,7 @@ en: {
     // What I Can Do
     whatICanDo: 'WHAT I CAN DO FOR YOU',
 
-    bringAiTitle: 'Help You Work More',
+    bringAiTitle: 'Get More Out of Your Work Hours',
     bringAiDesc:
       'Do in minutes what currently takes hours. Automate tedious tasks so you do not waste time and achieve better results. I integrate modern AI where it truly matters.',
 
