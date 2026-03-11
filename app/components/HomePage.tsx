@@ -38,7 +38,7 @@ export function HomePage() {
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
             {t.heroHeadline}
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-gray-100">
+          <p className="text-2xl md:text-2xl mb-8 text-gray-100">
             {t.heroSubheadline}
           </p>
           <a
