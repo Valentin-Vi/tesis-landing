@@ -8,6 +8,7 @@ export function ContactForm() {
   const [email, setEmail] = useState('');
   const [description, setDescription] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const { language } = useLanguage();
   const t = getTranslation(language);
@@ -15,6 +16,7 @@ export function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setError('');
 
     try {
       const response = await fetch('/api/contact', {
@@ -23,8 +25,10 @@ export function ContactForm() {
         body: JSON.stringify({ email, description }),
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error('Failed to submit form');
+        throw new Error(data.error || 'Failed to submit form');
       }
 
       setSubmitted(true);
@@ -33,6 +37,8 @@ export function ContactForm() {
 
       setTimeout(() => setSubmitted(false), 5000);
     } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : 'An unexpected error occurred';
+      setError(errorMessage);
       console.error('Error submitting form:', error);
     } finally {
       setLoading(false);
@@ -82,6 +88,12 @@ export function ContactForm() {
         {submitted && (
           <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
             {t.contactSuccess}
+          </div>
+        )}
+
+        {error && (
+          <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
+            {error}
           </div>
         )}
       </div>
