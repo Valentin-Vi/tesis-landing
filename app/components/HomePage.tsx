@@ -21,16 +21,16 @@ export function HomePage() {
     <div className="min-h-screen w-full overflow-x-hidden bg-[#111111]">
       {mounted && <LanguageSwitcher />}
 
-      <section className="relative w-full h-[70vh] lg:h-[60vh] pt-20 lg:py-12 flex items-center justify-center overflow-hidden bg-black">
+      <section className="relative w-full h-[70vh] lg:h-[60vh] mt-20 py-20 lg:py-12 flex items-center justify-center overflow-hidden bg-black">
         <video
-          playsInline
           autoPlay
           muted
           loop
+          playsInline
+          preload="none"
+          src="/resources/videos/hero.webm"
           className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/resources/videos/hackathon-hero.mp4" type="video/mp4" />
-        </video>
+        />
 
         <div className="absolute bg-linear-to-b from-transparent to-[#111111] bottom-0 left-0 right-0 h-[10px]" />
 
@@ -38,7 +38,7 @@ export function HomePage() {
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
             {t.heroHeadline}
           </h1>
-          <p className="text-2xl md:text-2xl mb-8 text-gray-100">
+          <p className="text-3xl md:text-2xl mb-8 text-gray-100">
             {t.heroSubheadline}
           </p>
           <a
@@ -69,7 +69,7 @@ export function HomePage() {
         
         {/* Project 1 */}
         <VideoSection
-          videoSrc="/resources/videos/scale-ai-process.mp4"
+          videoSrc="/resources/videos/microfauna.webm"
           title={t.aiThatSeesTitle}
           description={t.aiThatSeesDesc}
           imagePosition="right"
