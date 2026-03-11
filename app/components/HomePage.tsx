@@ -51,7 +51,7 @@ export function HomePage() {
       </section>
 
       {/* Who Am I */}
-      <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
         <h2 className="text-5xl font-bold text-center mt-6 text-[#c7e320] py-8">{t.introduction.title}</h2>
         <ImageSectionDoubleContent
           imageSrc='/resources/images/pfp2.jpeg'
@@ -64,7 +64,7 @@ export function HomePage() {
 
 
       {/* What I've Built */}
-      <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">        
+      <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">        
         <h2 className="text-5xl font-bold text-center text-[#c7e320]">{t.whatIveBuilt.title}</h2>
         
         {/* Project 1 */}
@@ -89,7 +89,7 @@ export function HomePage() {
       {/* What I Can Do */}
       <section className="bg-[#111111] py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center mb-16 text-[#c7e320]">{t.whatICanDo}</h2>
+          <h2 className="text-5xl font-bold text-center mb-16 text-[#c7e320]">{t.whatICanDo}</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-8 rounded-lg">

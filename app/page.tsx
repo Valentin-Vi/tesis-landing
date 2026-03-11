@@ -1,5 +1,4 @@
 import dynamicImport from 'next/dynamic';
-import { LanguageProvider } from './components/LanguageProvider';
 
 export const dynamic = 'force-dynamic';
 

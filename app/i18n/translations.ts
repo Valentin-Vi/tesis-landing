@@ -15,7 +15,7 @@ export const translations = {
 
     // Who Am I
     introduction: {
-      title: "Busco hacer mi tesis para tu negocio y sin cobrar",
+      title: "BUSCO HACER MI TESIS PARA VOS",
       whoAmI: {
         title: '¿Quién soy?',
         desc: 'Me llamo Valentín Villa (El de la derecha). Soy Lic. Analista en Sistemas y estudiante de Ingeniería en Informática.',
@@ -34,7 +34,7 @@ export const translations = {
 
     // What I've Built
     whatIveBuilt: {
-      title: 'Impacto logrado',
+      title: 'IMPACTO QUE YA TUVE',
       experience: {
         company: "Scale AI",
         roles: [
@@ -46,7 +46,7 @@ export const translations = {
     },
 
     // Project 1
-    aiThatSeesTitle: 'Hace más con menos',
+    aiThatSeesTitle: 'Hacer más con menos',
     aiThatSeesDesc:
       'Construí un sistema con IA para una planta de agua. Antes se requerían 2 especialistas trabajando más de 4 horas por semana (18 horas al mes), sin contar la capacitación ni el margen de error. Hoy el análisis es constante y continuo: se hace solo y no cuesta más que la electricidad.',
 
@@ -61,7 +61,7 @@ export const translations = {
       'Sistema de gestión hospitalaria: el personal puede gestionar pacientes e inventario en un mismo lugar, ver datos en tiempo real, todo asegurado y respaldado. Demuestra que puedo ser dueño de un proyecto de punta a punta.',
 
     // What I Can Do
-    whatICanDo: 'Lo que puedo hacer para vos',
+    whatICanDo: 'QUE PUEDO HACER PARA VOS',
 
     bringAiTitle: 'Que tu trabajo rinda más',
     bringAiDesc:
@@ -83,7 +83,7 @@ export const translations = {
     whatOthersSay: 'Qué dicen otros',
 
     // Contact
-    letsTalk: "Hablemos",
+    letsTalk: "HABLEMOS",
     letsTalkDesc:
       'Estoy terminando mi carrera y buscando un proyecto significativo. Si tenés un problema técnico — integrar IA, automatizar algo, analizar datos o construir un sistema — explorémoslo juntos.',
     contactEmail: 'Email *',
@@ -112,7 +112,7 @@ en: {
 
     // Who Am I
     introduction: {
-      title: "I want to build my thesis for your company — and I won't charge you",
+      title: "I WANT TO BUILD MY THESIS FOR YOU",
       whoAmI: {
         title: 'Who am I?',
         desc: 'My name is Valentín Villa. I am a Systems Analyst and a Computer Engineering student.',
@@ -131,7 +131,7 @@ en: {
 
     // What I've Built
     whatIveBuilt: {
-      title: 'Why People Know Me',
+      title: 'RESULTS I\'VE DELIVERED',
       experience: {
         company: "Scale AI",
         roles: [
@@ -158,7 +158,7 @@ en: {
       'Hospital management system: staff can manage patients and inventory in one place, see real-time data, and everything is secured and backed up. It shows that I can own a project from start to finish.',
 
     // What I Can Do
-    whatICanDo: 'What I Can Do For You',
+    whatICanDo: 'WHAT I CAN DO FOR YOU',
 
     bringAiTitle: 'Help You Work More',
     bringAiDesc:
@@ -180,7 +180,7 @@ en: {
     whatOthersSay: 'What Others Say',
 
     // Contact
-    letsTalk: "Let's Talk",
+    letsTalk: "LET'S TALK",
     letsTalkDesc:
       'I am finishing my degree and looking for a meaningful project. If you have a technical problem — integrating AI, automating something, analyzing data, or building a system — let’s explore it together.',
     contactEmail: 'Email *',
