@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Valentin Villa - Full-Stack Engineer & AI Specialist",
+  title: "Mi Tesis Para Vos",
   description: "I help companies do more with less. AI integration, data systems, and full-stack development.",
 };
 
