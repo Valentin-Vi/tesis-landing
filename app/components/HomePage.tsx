@@ -36,56 +36,12 @@ function useTypingEffect(text: string, speed: number = 50) {
   return displayedText;
 }
 
-function useDynamicTextColor(videoRef: React.RefObject<HTMLVideoElement>) {
-  const [textColor, setTextColor] = useState('white');
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    if (!canvasRef.current) {
-      canvasRef.current = document.createElement('canvas');
-      canvasRef.current.width = 100;
-      canvasRef.current.height = 100;
-    }
-
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    const sampleColors = () => {
-      try {
-        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-        const imageData = ctx.getImageData(canvas.width / 2, canvas.height / 2, 1, 1);
-        const [r, g, b] = imageData.data;
-
-        // Calculate brightness using luminance formula
-        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
-
-        // If background is bright, use cyan text; if dark, use black text
-        setTextColor(brightness > 128 ? '#090a12' : '#b5ffff');
-      } catch (e) {
-        // CORS or other errors, keep default
-        setTextColor('#b5ffff');
-      }
-    };
-
-    const interval = setInterval(sampleColors, 500);
-
-    return () => clearInterval(interval);
-  }, [videoRef]);
-
-  return textColor;
-}
-
 export function HomePage() {
   const [mounted, setMounted] = useState(false);
   const { language } = useLanguage();
   const t = getTranslation(language);
   const typedTitle = useTypingEffect(t.heroHeadline, 50);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const textColor = useDynamicTextColor(videoRef);
 
   useEffect(() => {
     setMounted(true);
@@ -108,7 +64,7 @@ export function HomePage() {
         />
 
         <div className="relative z-10 text-center text-shadow-lg text-shadow-black/35 py-40 px-4 max-w-3xl">
-          <h1 className={bitcount.className + " font-semibold text-4xl md:text-6xl mb-6 will-change-transform leading-tight mix-blend-difference text-shadow-lg min-h-35 md:min-h-40 flex items-center justify-center transition-colors duration-300"} style={{ color: textColor }}>
+          <h1 className={bitcount.className + " font-semibold text-4xl md:text-6xl mb-6 will-change-transform leading-tight mix-blend-difference text-shadow-lg min-h-35 md:min-h-40 flex items-center justify-center transition-colors duration-300"}>
             <span>{typedTitle}<span className={typedTitle === t.heroHeadline ? '' : 'animate-pulse'}>|</span></span>
           </h1>
           <p className="text-2xl md:text-2xl mb-8 font-serif text-[#e4eef5]">
