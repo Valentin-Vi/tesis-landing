@@ -18,7 +18,7 @@ export function HomePage() {
   }, []);
 
   return (
-    <div className="min-h-screen w-full overflow-x-hidden bg-[#111111]">
+    <div className="min-h-screen w-full overflow-x-hidden bg-[#090a12]">
       {mounted && <LanguageSwitcher />}
 
       <section className="relative w-full h-[70vh] lg:h-[60vh] mt-20 py-20 lg:py-12 flex items-center justify-center overflow-hidden bg-black">
@@ -32,18 +32,16 @@ export function HomePage() {
           className="absolute inset-0 w-full h-full object-cover"
         />
 
-        <div className="absolute bg-linear-to-b from-transparent to-[#111111] bottom-0 left-0 right-0 h-[10px]" />
-
-        <div className="relative z-10 text-center text-shadow-lg text-shadow-black/35 text-[#c7e320] px-4 max-w-3xl">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+        <div className="relative z-10 text-center text-shadow-lg text-shadow-black/35 text-[#3c93ea] px-4 max-w-3xl">
+          <h1 className="text-5xl md:text-6xl mb-6 leading-tight font-serif">
             {t.heroHeadline}
           </h1>
-          <p className="text-3xl md:text-2xl mb-8 text-gray-100">
+          <p className="text-3xl md:text-2xl mb-8 font-serif text-[#e4eef5]">
             {t.heroSubheadline}
           </p>
           <a
             href="#contact"
-            className="inline-block bg-white text-black px-8 text-shadow-none py-3 rounded-lg font-semibold hover:bg-gray-200 transition"
+            className="inline-block bg-white text-black px-8 text-shadow-none py-3 rounded-lg font-serif hover:bg-gray-200 transition"
           >
             {t.heroCta}
           </a>
@@ -52,9 +50,9 @@ export function HomePage() {
 
       {/* Who Am I */}
       <section className="relative max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
-        <h2 className="text-5xl font-bold text-center mt-6 text-[#c7e320] py-8">{t.introduction.title}</h2>
+        <h2 className="text-5xl text-center font-serif font-semibold mt-6 text-[#3c93ea] py-8">{t.introduction.title}</h2>
         <ImageSectionDoubleContent
-          imageSrc='/resources/images/pfp2.jpeg'
+          imageSrc='/resources/images/pfp.jpeg'
           imageAlt="Picture of me"
           whoAmI={t.introduction.whoAmI}
           whatIsThis={t.introduction.whatIsThis}
@@ -65,7 +63,7 @@ export function HomePage() {
 
       {/* What I've Built */}
       <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">        
-        <h2 className="text-5xl font-bold text-center text-[#c7e320]">{t.whatIveBuilt.title}</h2>
+        <h2 className="text-5xl text-center font-serif text-[#3c93ea]">{t.whatIveBuilt.title}</h2>
         
         {/* Project 1 */}
         <VideoSection
@@ -82,38 +80,36 @@ export function HomePage() {
           description={t.slowProcessDesc}
           imagePosition="left"
         />
-
-        <div className="absolute w-full bg-linear-to-b from-transparent to-[#111111] bottom-0 left-0 right-0 h-[15px]" />
       </section>
 
       {/* What I Can Do */}
-      <section className="bg-[#111111] py-20">
+      <section className="py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-5xl font-bold text-center mb-16 text-[#c7e320]">{t.whatICanDo}</h2>
+          <h2 className="text-5xl text-center font-serif mb-16 text-[#3c93ea]">{t.whatICanDo}</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-8 rounded-lg">
               <div className='flex flex-row gap-4 text-left items-center'>
                 <div className="text-4xl mb-4">🤖</div>
-                <h3 className="text-xl font-bold text-[#c7e320] mb-3">{t.bringAiTitle}</h3>
+                <h3 className="text-xl font-serif text-[#3c93ea] mb-3">{t.bringAiTitle}</h3>
               </div>
-              <p className="text-gray-100">{t.bringAiDesc}</p>
+              <p className="text-[#e4eef5]">{t.bringAiDesc}</p>
             </div>
 
             <div className="p-8 rounded-lg">
               <div className='flex flex-row gap-4 text-left items-center'>
                 <div className="text-4xl mb-4">📊</div>
-                <h3 className="text-xl font-bold text-[#c7e320] mb-3">{t.messyDataTitle}</h3>
+                <h3 className="text-xl font-serif text-[#3c93ea] mb-3">{t.messyDataTitle}</h3>
               </div>
-              <p className="text-gray-100">{t.messyDataDesc}</p>
+              <p className="text-[#e4eef5]">{t.messyDataDesc}</p>
             </div>
             
             <div className="p-8 rounded-lg">
               <div className='flex flex-row gap-4 text-left items-center'>
                 <div className="text-4xl mb-4">⚙️</div>
-                <h3 className="text-xl font-bold text-[#c7e320] mb-3">{t.fixProcessTitle}</h3>
+                <h3 className="text-xl font-serif text-[#3c93ea] mb-3">{t.fixProcessTitle}</h3>
               </div>
-              <p className="text-gray-100">{t.fixProcessDesc}</p>
+              <p className="text-[#e4eef5]">{t.fixProcessDesc}</p>
             </div>
           </div>
         </div>
@@ -122,8 +118,8 @@ export function HomePage() {
       {/* Contact Section */}
       <section id="contact" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-12">
-          <h2 className="text-6xl lg:text-8xl font-bold text-[#c7e320] mb-4">{t.letsTalk}</h2>
-          <p className="text-lg text-gray-100">
+          <h2 className="text-5xl font-serif lg:text-5xl text-[#3c93ea] mb-4">{t.letsTalk}</h2>
+          <p className="text-lg text-[#e4eef5]">
             {t.letsTalkDesc}
           </p>
         </div>

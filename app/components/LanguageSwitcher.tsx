@@ -21,8 +21,8 @@ export function LanguageSwitcher() {
         onClick={() => setLanguage('es')}
         className={`px-4 py-2 rounded-lg font-semibold transition ${
           language === 'es'
-            ? 'bg-black text-white'
-            : 'bg-white text-gray-900 hover:bg-[#c7e320]'
+            ? 'bg-black text-[#e4eef5]'
+            : 'bg-[#e4eef5] text-gray-900 hover:bg-[#3c93ea] hover:text-[#e4eef5]'
         }`}
       >
         ES
@@ -31,8 +31,8 @@ export function LanguageSwitcher() {
         onClick={() => setLanguage('en')}
         className={`px-4 py-2 rounded-lg font-semibold transition ${
           language === 'en'
-            ? 'bg-black text-white'
-            : 'bg-white text-gray-900 hover:bg-[#c7e320]'
+            ? 'bg-black text-[#e4eef5]'
+            : 'bg-[#e4eef5] text-gray-900 hover:bg-[#3c93ea] hover:text-[#e4eef5]'
         }`}
       >
         EN

@@ -22,12 +22,12 @@ export function ImageSectionDoubleContent({
   imagePosition = 'left',
 }: ImageSectionDoubleContentProps) {
   const imageContent = (
-    <div className="rounded-xl overflow-hidden size-full reative">
+    <div className="rounded-xl overflow-hidden size-full reative lg:w-100 lg:h-100">
       <Image
         src={imageSrc}
         alt={imageAlt}
-        width={1000}
-        height={1000}
+        width={500}
+        height={500}
         className="w-full h-full object-cover rounded-xl"
       />
     </div>
@@ -41,11 +41,11 @@ export function ImageSectionDoubleContent({
   )
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center py-8">
-      <div className="h-80 md:h-96">
-        {imageContent}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-8">
+      <div className="flex justify-center h-80 md:h-96">
+        { imageContent }
       </div>
-        {textContent}
+      { textContent }
     </div>
   )
 }
