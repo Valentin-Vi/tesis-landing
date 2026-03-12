@@ -1,5 +1,6 @@
 import Image from "next/image"
 import TextComponent from "./TextComponent";
+
 interface ImageSectionDoubleContentProps {
   imageSrc: string;
   imageAlt: string;

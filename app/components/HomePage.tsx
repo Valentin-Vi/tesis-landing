@@ -1,17 +1,91 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useLanguage } from './LanguageProvider';
 import { getTranslation } from '../i18n/translations';
 import { ContactForm } from './ContactForm';
 import { VideoSection } from './VideoSection';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { ImageSectionDoubleContent } from './AboutMeSection';
+import { Bitcount_Single } from "next/font/google";
+
+const bitcount = Bitcount_Single({
+  subsets: ["latin"],
+  variable: "--font-bitcount-grid",
+});
+
+function useTypingEffect(text: string, speed: number = 50) {
+  const [displayedText, setDisplayedText] = useState('');
+
+  useEffect(() => {
+    let index = 0;
+    setDisplayedText('');
+
+    const interval = setInterval(() => {
+      if (index < text.length) {
+        setDisplayedText(text.substring(0, index + 1));
+        index++;
+      } else {
+        clearInterval(interval);
+      }
+    }, speed);
+
+    return () => clearInterval(interval);
+  }, [text, speed]);
+
+  return displayedText;
+}
+
+function useDynamicTextColor(videoRef: React.RefObject<HTMLVideoElement>) {
+  const [textColor, setTextColor] = useState('white');
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (!canvasRef.current) {
+      canvasRef.current = document.createElement('canvas');
+      canvasRef.current.width = 100;
+      canvasRef.current.height = 100;
+    }
+
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const sampleColors = () => {
+      try {
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+        const imageData = ctx.getImageData(canvas.width / 2, canvas.height / 2, 1, 1);
+        const [r, g, b] = imageData.data;
+
+        // Calculate brightness using luminance formula
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+
+        // If background is bright, use cyan text; if dark, use black text
+        setTextColor(brightness > 128 ? '#090a12' : '#b5ffff');
+      } catch (e) {
+        // CORS or other errors, keep default
+        setTextColor('#b5ffff');
+      }
+    };
+
+    const interval = setInterval(sampleColors, 500);
+
+    return () => clearInterval(interval);
+  }, [videoRef]);
+
+  return textColor;
+}
 
 export function HomePage() {
   const [mounted, setMounted] = useState(false);
   const { language } = useLanguage();
   const t = getTranslation(language);
+  const typedTitle = useTypingEffect(t.heroHeadline, 50);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const textColor = useDynamicTextColor(videoRef);
 
   useEffect(() => {
     setMounted(true);
@@ -23,20 +97,21 @@ export function HomePage() {
 
       <section className="relative w-full h-[70vh] lg:h-[60vh] mt-20 py-20 lg:py-12 flex items-center justify-center overflow-hidden bg-black">
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
           preload="none"
-          src="/resources/videos/hero.webm"
+          src="/resources/videos/hero_2_ios_2.mp4"
           className="absolute inset-0 w-full h-full object-cover"
         />
 
-        <div className="relative z-10 text-center text-shadow-lg text-shadow-black/35 text-[#3c93ea] px-4 max-w-3xl">
-          <h1 className="text-5xl md:text-6xl mb-6 leading-tight font-serif">
-            {t.heroHeadline}
+        <div className="relative z-10 text-center text-shadow-lg text-shadow-black/35 py-40 px-4 max-w-3xl">
+          <h1 className={bitcount.className + " font-semibold text-4xl md:text-6xl mb-6 will-change-transform leading-tight mix-blend-difference text-shadow-lg min-h-35 md:min-h-40 flex items-center justify-center transition-colors duration-300"} style={{ color: textColor }}>
+            <span>{typedTitle}<span className={typedTitle === t.heroHeadline ? '' : 'animate-pulse'}>|</span></span>
           </h1>
-          <p className="text-3xl md:text-2xl mb-8 font-serif text-[#e4eef5]">
+          <p className="text-2xl md:text-2xl mb-8 font-serif text-[#e4eef5]">
             {t.heroSubheadline}
           </p>
           <a
@@ -50,7 +125,7 @@ export function HomePage() {
 
       {/* Who Am I */}
       <section className="relative max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
-        <h2 className="text-5xl text-center font-serif font-semibold mt-6 text-[#3c93ea] py-8">{t.introduction.title}</h2>
+        <h2 className={" text-5xl text-center font-serif font-semibold mt-6 text-[#b5ffff] py-8"}>{t.introduction.title}</h2>
         <ImageSectionDoubleContent
           imageSrc='/resources/images/pfp.jpeg'
           imageAlt="Picture of me"
@@ -63,7 +138,7 @@ export function HomePage() {
 
       {/* What I've Built */}
       <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">        
-        <h2 className="text-5xl text-center font-serif text-[#3c93ea]">{t.whatIveBuilt.title}</h2>
+        <h2 className="text-5xl text-center font-serif text-[#b5ffff]">{t.whatIveBuilt.title}</h2>
         
         {/* Project 1 */}
         <VideoSection
@@ -85,13 +160,13 @@ export function HomePage() {
       {/* What I Can Do */}
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-5xl text-center font-serif mb-16 text-[#3c93ea]">{t.whatICanDo}</h2>
+          <h2 className="text-5xl text-center font-serif mb-16 text-[#b5ffff]">{t.whatICanDo}</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-8 rounded-lg">
               <div className='flex flex-row gap-4 text-left items-center'>
                 <div className="text-4xl mb-4">🤖</div>
-                <h3 className="text-xl font-serif text-[#3c93ea] mb-3">{t.bringAiTitle}</h3>
+                <h3 className="text-xl font-serif text-[#b5ffff] mb-3">{t.bringAiTitle}</h3>
               </div>
               <p className="text-[#e4eef5]">{t.bringAiDesc}</p>
             </div>
@@ -99,7 +174,7 @@ export function HomePage() {
             <div className="p-8 rounded-lg">
               <div className='flex flex-row gap-4 text-left items-center'>
                 <div className="text-4xl mb-4">📊</div>
-                <h3 className="text-xl font-serif text-[#3c93ea] mb-3">{t.messyDataTitle}</h3>
+                <h3 className="text-xl font-serif text-[#b5ffff] mb-3">{t.messyDataTitle}</h3>
               </div>
               <p className="text-[#e4eef5]">{t.messyDataDesc}</p>
             </div>
@@ -107,7 +182,7 @@ export function HomePage() {
             <div className="p-8 rounded-lg">
               <div className='flex flex-row gap-4 text-left items-center'>
                 <div className="text-4xl mb-4">⚙️</div>
-                <h3 className="text-xl font-serif text-[#3c93ea] mb-3">{t.fixProcessTitle}</h3>
+                <h3 className="text-xl font-serif text-[#b5ffff] mb-3">{t.fixProcessTitle}</h3>
               </div>
               <p className="text-[#e4eef5]">{t.fixProcessDesc}</p>
             </div>
@@ -118,7 +193,7 @@ export function HomePage() {
       {/* Contact Section */}
       <section id="contact" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-12">
-          <h2 className="text-5xl font-serif lg:text-5xl text-[#3c93ea] mb-4">{t.letsTalk}</h2>
+          <h2 className={bitcount.className + " text-5xl font-serif lg:text-7xl text-[#b5ffff] mb-4"}>{t.letsTalk}</h2>
           <p className="text-lg text-[#e4eef5]">
             {t.letsTalkDesc}
           </p>

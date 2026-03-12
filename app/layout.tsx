@@ -4,7 +4,6 @@ import "./globals.css";
 import { LanguageProvider } from "./components/LanguageProvider";
 import { Analytics } from '@vercel/analytics/next'
 
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

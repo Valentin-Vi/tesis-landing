@@ -3,6 +3,12 @@
 import { useState } from 'react';
 import { useLanguage } from './LanguageProvider';
 import { getTranslation } from '../i18n/translations';
+import { Bitcount_Single } from 'next/font/google';
+
+const bitcount = Bitcount_Single({
+  subsets: ['latin'],
+  variable: '--font-bitcount-grid',
+});
 
 export function ContactForm() {
   const [email, setEmail] = useState('');
@@ -49,7 +55,7 @@ export function ContactForm() {
     <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto">
       <div className="space-y-4">
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-100 mb-2">
+          <label htmlFor="email" className={" block text-sm font-medium text-gray-100 mb-2"}>
             {t.contactEmail}
           </label>
           <input
@@ -80,20 +86,14 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-gray-100 text-black py-3 rounded-lg font-semibold hover:bg-[#c7e320] transition disabled:opacity-50"
+          className="w-full bg-gray-100 text-black py-3 rounded-lg font-semibold hover:bg-[#b5ffff] transition disabled:opacity-50"
         >
           {loading ? t.contactSubmitting : t.contactSubmit}
         </button>
 
         {submitted && (
-          <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
+          <div className="bg-[#090a12] border border-[#b5ffff] text-[#b5ffff] px-4 py-3 rounded-lg">
             {t.contactSuccess}
-          </div>
-        )}
-
-        {error && (
-          <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
-            {error}
           </div>
         )}
       </div>
